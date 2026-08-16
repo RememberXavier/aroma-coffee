@@ -1,121 +1,174 @@
-/* Layout > Box model > Appearance > Typography */
-
 * {
     box-sizing: border-box;
+} /* box의 size를 border를 포함한 기준으로 설정 */
+
+/* ========================================
+   Root
+======================================== */
+
+:root {
+    /* Color */
+    --color-background: #e4c190;
+    --color-surface: #ac7f36;
+    --color-text: #edcfb9;
+    --color-border: #88531d;
+    --color-border-blurred: rgba(174, 88, 67, 0.5);
+    --color-menu: rgb(174, 88, 67);
+    --color-greenboard: #77ab4a;
+    --color-hover: #6a3d18;
+
+    /* Spacing */
+    --spacing-small: 10px;
+    --spacing-medium: 20px;
+    --spacing-large: 40px;
+
+    /* Radius */
+    --radius-small: 5px;
+    --radius-medium: 10px;
+
+    /* Border */
+    --border-small: 2px;
+    --border-medium: 5px;
+    --border-large: 10px;
 }
 
-/* Body */
+/* ========================================
+   Layout
+======================================== */
+
+/* Layout > Box model > Appearance > Typography */
 
 body {
-    margin: 10px;
-    padding: 10px;
-    border: 2px solid black;
+    /* box model */
+    margin: var(--spacing-medium);
+    padding: var(--spacing-medium);
+
+    /*appearance*/
+    border: var(--border-small) solid var(--color-border-blurred);
+    border-radius: var(--radius-small);
+    background-color: var(--color-background);
 }
 
-/* Header */
+header,
+main,
+footer {
+    /* box model */
+    margin: var(--spacing-medium) auto;
+    padding: var(--spacing-medium);
+}
+
+/* ========================================
+   Header
+======================================== */
 
 header {
     /* Layout */
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     gap: 80px;
 
-    /* Box model */
-    margin: 10px auto;
-    padding: 10px;
-
     /* Appearance */
-    border: 2px solid black;
-    border-radius: 10px;
+    border: var(--border-medium) solid var(--color-border);
+    border-radius: var(--radius-medium);
+    background-color: var(--color-background);
 }
 
-/* Main */
-
-main {
-    /* Box model */
-    width: 80%;
-    max-width: 1200px;
-    margin: 10px auto;
-    padding: 10px;
-
-    /* Appearance */
-    border: 2px solid black;
-    border-radius: 10px;
-}
-
-main section {
-    /* Box model */
-    padding: 40px 20px;
-
-    /* Typography */
-    text-align: center;
-}
-
-main section + section {
-    /* Box model */
-    padding-top: 10px;
-
-    /* Appearance */
-    border-top: 1px solid black;
-}
-
-main section ul {
-    /* Layout */
-    display: flex;
-    justify-content: center;
-    gap: 100px;
-}
-
-main section img {
-    width: 100%;
-    height: auto;
-}
-
-/* Navigation */
+/* ========================================
+   Navigation
+======================================== */
 
 nav ul {
-    /* Layout */
     display: flex;
-    gap: 20px;
-
-    /* Box model */
+    gap: var(--spacing-medium);
     margin: 0;
     padding: 0;
-
-    /* Appearance */
     list-style: none;
 }
 
 nav a {
-    /* Box model */
     padding: 8px 12px;
-
-    /* Appearance */
-    color: black;
-
-    /* Typography */
+    color: var(--color-text);
     text-decoration: none;
+    background-color: var(--color-surface);
+    border: var(--border-small) solid var(--color-border);
+    border-radius: var(--radius-medium);
 }
 
 nav a:hover {
-    /* Appearance */
-    background-color: #f1e6dc;
-    border-radius: 6px;
+    background-color: var(--color-hover);
 }
 
-/* Footer */
+/* ========================================
+   Main
+======================================== */
+
+main {
+    /* Layout */
+    width: 80%;
+    max-width: 1200px;
+    /* Appearance */
+    border: var(--border-large) solid var(--color-border);
+    border-radius: var(--radius-medium);
+    background-color: var(--color-greenboard);
+}
+
+.section {
+    padding: var(--spacing-large) var(--spacing-medium);
+    text-align: center;
+}
+
+.section + .section {
+    border-top: 1px solid var(--color-border);
+    padding-top: var(--spacing-medium);
+}
+
+/* ========================================
+   Images
+======================================== */
+
+.hero-image {
+    width: 80%;
+    height: auto;
+}
+
+.menu-image {
+    width: auto;
+    height: 80%;
+}
+
+/* ========================================
+   Menu
+======================================== */
+
+.menu-list {
+    /* Layout */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-medium);
+    /* Appearance */
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.menu-card {
+    padding: var(--spacing-medium);
+    background-color: var(--color-surface);
+}
+
+/* ========================================
+   Footer
+======================================== */
 
 footer {
     /* Layout */
     display: flex;
     justify-content: center;
 
-    /* Box model */
-    margin: 10px auto;
-    padding: 10px;
-
     /* Appearance */
-    border: 2px solid black;
-    border-radius: 10px;
+    border: var(--border-medium) solid var(--color-border);
+    border-radius: var(--radius-medium);
+    background-color: var(--color-background);
 }
