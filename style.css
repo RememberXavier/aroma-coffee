@@ -45,6 +45,7 @@ body {
     flex-direction: column;
     align-items: center;
     max-width: 1300px;
+
     /* Box model */
     margin: var(--spacing-medium) auto;
     padding: var(--spacing-medium);
@@ -79,12 +80,24 @@ hr {
     border-top: var(--border-small) solid var(--color-border);
 }
 
+h1 {
+    margin: 0;
+    white-space: nowrap;
+}
+
 h2 {
     margin-top: 0;
 }
 
 html {
     background-color: var(--color-page-background);
+}
+
+.features ul {
+    width: fit-content;
+    margin: 0 auto;
+    padding: 0;
+    list-style-position: inside;
 }
 
 /* ========================================
@@ -197,4 +210,38 @@ footer {
     border: var(--border-medium) solid var(--color-border);
     border-radius: var(--radius-medium);
     background-color: var(--color-background);
+}
+
+/* ========================================
+   @for mobile
+======================================== */
+
+.mobile-break {
+    /* If not mobile */
+    display: none;
+}
+
+@media (max-width: 768px) {
+    main {
+        width: 90%;
+    }
+
+    header {
+        flex-direction: column;
+        gap: var(--spacing-medium);
+        padding-left: var(--spacing-large);
+        padding-right: var(--spacing-large);
+    }
+
+    nav ul {
+        gap: var(--spacing-small);
+    }
+
+    nav a {
+        padding: 6px 8px;
+    }
+
+    .mobile-break {
+        display: block;
+    }
 }
