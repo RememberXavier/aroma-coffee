@@ -14,7 +14,6 @@
     --color-text: #edcfb9;
     --color-border: #88531d;
     --color-border-blurred: rgba(174, 88, 67, 0.5);
-    --color-menu: rgb(174, 88, 67);
     --color-greenboard: #77ab4a;
     --color-hover: #6a3d18;
 
@@ -38,6 +37,10 @@
 ======================================== */
 
 /* Layout > Box model > Appearance > Typography */
+
+html {
+    background-color: var(--color-page-background);
+}
 
 body {
     /* Layout */
@@ -87,17 +90,6 @@ h1 {
 
 h2 {
     margin-top: 0;
-}
-
-html {
-    background-color: var(--color-page-background);
-}
-
-.features ul {
-    width: fit-content;
-    margin: 0 auto;
-    padding: 0;
-    list-style-position: inside;
 }
 
 /* ========================================
@@ -162,6 +154,13 @@ main {
     text-align: center;
 }
 
+.features ul {
+    width: fit-content;
+    margin: 0 auto;
+    padding: 0;
+    list-style-position: inside;
+}
+
 /* ========================================
    Images
 ======================================== */
@@ -213,7 +212,7 @@ footer {
 }
 
 /* ========================================
-   @for mobile
+   Responsive
 ======================================== */
 
 .mobile-break {
@@ -222,15 +221,15 @@ footer {
 }
 
 @media (max-width: 768px) {
-    main {
-        width: 90%;
-    }
-
     header {
         flex-direction: column;
         gap: var(--spacing-medium);
         padding-left: var(--spacing-large);
         padding-right: var(--spacing-large);
+    }
+
+    main {
+        width: 90%;
     }
 
     nav ul {
